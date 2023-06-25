@@ -1,0 +1,22 @@
+id: 51f1fc47-2625-4c9e-a317-2c040494cbff
+timestamp: 2023-06-25T21:29:03Z
+username: guest
+source: TAP-GUI
+accelerator:
+  name: csharp-rest-service
+  source:
+    image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:54100c5b789a4984abf3c5551a2a2030dc6f720250f8f69c424a0e7e37102622
+fragments:
+  - name: steeltoe-postgresql
+    source:
+      image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:e82638d1412409c4944ebeb2bfcfcb0d762a4adb323e9fda9cd8d7e7b00551cf
+  - name: tap-workload
+    source:
+      image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+options:
+  applicationName: CustomerProfileAPI
+  databaseName: customer-database
+  databasePostgresStorageClass: default
+  databaseType: postgres
+  exposeOpenAPIEndpoint: false
+  projectName: csharp-rest-service
